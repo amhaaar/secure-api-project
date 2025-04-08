@@ -29,7 +29,7 @@ A simple and secure API middleware built with Node.js, Express, and SQLite. This
 
 1. **Clone the repo**
 ```bash
-git clone https://github.com/your-username/secure-api-project.git
+git clone https://github.com/amhaaar/secure-api-project.git
 cd secure-api-project
 ```
 

@@ -59,12 +59,14 @@
 <body>
   <h1>Fetch Country Data</h1>
 
+  <!-- Form to enter and submit API key -->
   <form id="countryForm">
     <label for="apiKey">Enter Your API Key:</label><br>
     <input type="text" id="apiKey" name="apiKey" required /><br><br>
     <button type="submit">Fetch Countries</button>
   </form>
 
+  <!--search box that appears after fetching data -->
   <input type="text" id="searchBox" placeholder="Search countries..." style="display: none;" />
 
   <hr>
@@ -74,11 +76,13 @@
   <script>
     let allCountries = [];
 
+    // Handle API key form submission
     document.getElementById('countryForm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const apiKey = document.getElementById('apiKey').value;
 
       try {
+        // Call the API with the provided API key
         const response = await fetch('/api/countries', {
           headers: {
             'x-api-key': apiKey

@@ -12,7 +12,10 @@ router.post('/register', async (req, res) => {
   try {
     const success = await authService.register(req.body);
     if (success) {
-      res.redirect('/auth/login');
+      // Now log the user in by creating a session
+      const user = await authService.login(req.body);
+      req.session.user = { id: user.id, email: user.email }; // Set session
+      res.redirect('/admin/dashboard');
     } else {
       res.render('register', { error: 'Email already exists' });
     }
